@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Housing Prices Prediction</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    </head>
+    <body>
+        <div class="ui container">
+            <div class="ui two column centered grid">
+                <div class="column">
+                    <h1>Housing Prices Prediction</h1>
+                    <h2>Top 10 results</h2>
+                    <table class="ui celled table">
+                        <thead>
+                        <tr><th>House Prices (USD)</th>
+                        </tr></thead>
+                        <tbody>
+                            {% for res in test_results.predicted_values %}
+                                <tr>
+                                    <td data-label="price">{{res | round(2)}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
